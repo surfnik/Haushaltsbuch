@@ -32,7 +32,23 @@ namespace Haushaltsbuch
 
         private void mnuOpen_Click(object sender, RoutedEventArgs e)
         {
-            lbl1.Content = "Öffnen";
+            //https://docs.microsoft.com/de-de/dotnet/desktop/wpf/windows/how-to-open-common-system-dialog-box?view=netdesktop-6.0
+            // Configure open file dialog box
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            //dialog.FileName = "Document"; // Default file name
+            dialog.DefaultExt = ".prof"; // Default file extension
+            dialog.Filter = "Benutzerprofile (.prof)|*.prof"; // Filter files by extension
+            // dialog.InitialDirectory ist noch zu 
+
+            // Show open file dialog box
+            bool? result = dialog.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                // Open document
+                string filename = dialog.FileName;
+            }
         }
 
         private void mnuExit_Click(object sender, RoutedEventArgs e)
