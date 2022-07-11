@@ -16,6 +16,17 @@
             </MenuItem>
         </Menu>
 
-        <Label x:Name="lbl1" Content="???" />
+        <Label x:Name="lblProfile" Margin="10" Background="LightGray" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                
+                <Label Content="Aktuelles Profil:"/>
+                <Label Content="-----" />
+                <Label Content="Kontostand: " />
+                <Label  Content="0,00 €" />
+            </StackPanel>
+        </Label>
+        <StackPanel>
+            
+        </StackPanel>
     </DockPanel>
 </Window>
