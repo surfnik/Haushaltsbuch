@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haushaltsbuch
 {
+    [Serializable]
     internal class Transaction
     {
         public string Name { get; set; }

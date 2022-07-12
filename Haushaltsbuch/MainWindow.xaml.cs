@@ -37,7 +37,7 @@ namespace Haushaltsbuch
             var dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.DefaultExt = ".prof"; // Default file extension
             dialog.Filter = "Benutzerprofile (.prof)|*.prof"; // Filter files by extension
-            // dialog.InitialDirectory ist noch zu basteln
+            dialog.InitialDirectory = AppContext.BaseDirectory;
 
             // Show open file dialog box
             bool? result = dialog.ShowDialog();
@@ -53,6 +53,11 @@ namespace Haushaltsbuch
         private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Trööt", "Speicherfehler", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
