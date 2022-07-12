@@ -27,7 +27,8 @@ namespace Haushaltsbuch
 
         private void mnuNew_Click(object sender, RoutedEventArgs e)
         {
-            
+            NewProfile newProfile = new NewProfile();
+            newProfile.ShowDialog();
         }
 
         private void mnuOpen_Click(object sender, RoutedEventArgs e)

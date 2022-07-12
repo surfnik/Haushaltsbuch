@@ -23,5 +23,38 @@ namespace Haushaltsbuch
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnOk_Click(object sender, RoutedEventArgs e)
+        {
+            string name = "";
+            decimal balance = 0;
+            bool inputOk = true;
+            try
+            {
+            name = txtName.Text;
+                if (name == "") 
+                { 
+                    MessageBox.Show("Name darf nicht leer sein!", "Leerer Name", MessageBoxButton.OK, MessageBoxImage.Error); 
+                    inputOk = false;
+                }
+            balance = Convert.ToDecimal(txtAmmount.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Speicherfehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                inputOk = false;
+            }
+            ProfileManager.CreateProfile(name, balance);
+
+            if (inputOk)
+            {
+            this.Close();
+            }
+        }
     }
 }
